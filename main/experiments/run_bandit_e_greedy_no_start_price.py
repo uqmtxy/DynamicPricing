@@ -19,7 +19,7 @@ selled = list()
 
 
 
-data = pd.read_csv('/home/maryna/dynamic-pricing/all_ready_data.csv')[20000:20000+n] # берем срез, чтобы данные из обучения не попали в тест
+data = pd.read_csv('/home/k03nza/dynamic-pricing/all_ready_data.csv')[20000:20000+n] # берем срез, чтобы данные из обучения не попали в тест
 data_y  = data['Цена'].values
 
 f = open("real_price.txt", "w")

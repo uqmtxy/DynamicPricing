@@ -202,7 +202,7 @@ def parse_subways_json(data):
     df2 = boolean_df(data['subway_st'], s_lines.keys())
     data = pd.concat([data, df2], axis=1)
     del data['subway_st']
-    f = open("/home/maryna/dynamic-pricing/models/new_json/subway.txt")
+    f = open("/home/k03nza/dynamic-pricing/models/new_json/subway.txt")
     subway_list = f.readlines()
     for st in subway_list:
         st2 = st.strip()
@@ -252,7 +252,7 @@ def target_enc_subways(data, target):
     s_lines = ret_value_counts(data, 'subway_st')
     df2 = boolean_df(data['subway_st'], s_lines.keys())
     data = pd.concat([data, df2], axis=1)
-    f = open("/home/maryna/dynamic-pricing/models/new_json/subway.txt")
+    f = open("/home/k03nza/dynamic-pricing/models/new_json/subway.txt")
     subway_list = f.readlines()
     for st in subway_list:
         st2 = st.strip()
@@ -383,11 +383,11 @@ def prepare_all(data):
         if field not in set_to_left:
             data.drop([field], axis=1, inplace=True)
     data = parse_date(data)
-    keyrate = pd.read_csv('/home/maryna/dynamic-pricing/models/data/last/keyratedata.csv')
+    keyrate = pd.read_csv('/home/k03nza/dynamic-pricing/models/data/last/keyratedata.csv')
     keyrate['date'] =keyrate['date'].apply(convert_to_unixtime)
     keyrate = keyrate.set_index('date')
     data = parse_keyrate(data, keyrate)
-    currency = pd.read_csv("/home/maryna/dynamic-pricing/models/data/last/currency_data.csv", usecols=['date', 'currency', 'num'])
+    currency = pd.read_csv("/home/k03nza/dynamic-pricing/models/data/last/currency_data.csv", usecols=['date', 'currency', 'num'])
     currency['date'] = currency['date'].apply(convert_to_unixtime)
     currency = currency.set_index('date')
     value_to_split = 'USD'
@@ -420,7 +420,7 @@ def prepare_all(data):
     
     return data
 
-data = pd.read_csv('/home/maryna/dynamic-pricing/all_ready_data.csv')
+data = pd.read_csv('/home/k03nza/dynamic-pricing/all_ready_data.csv')
 print(np.mean(data['Цена']))
 
 

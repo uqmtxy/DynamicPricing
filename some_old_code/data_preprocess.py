@@ -538,7 +538,7 @@ def prepare_all(data):
 
     return data
 
-# data = pd.read_csv('/home/maryna/dynamic-pricing/models/data/cian_new_flats.csv', delimiter=";")
+# data = pd.read_csv('/home/k03nza/dynamic-pricing/models/data/cian_new_flats.csv', delimiter=";")
 
 # data = parse_highways(data)
 # data = parse_coordinates(data)

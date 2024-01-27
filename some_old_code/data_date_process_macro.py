@@ -1,7 +1,7 @@
 import pandas as pd
 import csv
 
-data = pd.read_csv('/home/maryna/dynamic-pricing/models/data/keyratedata.csv')
+data = pd.read_csv('/home/k03nza/dynamic-pricing/models/data/keyratedata.csv')
 
 
 for i in range(len(data['timestamp'])):
@@ -13,7 +13,7 @@ for i in range(len(data['timestamp'])):
 print(data)
 
 print(data.keys())
-with open('/home/maryna/dynamic-pricing/models/data/keyratedata_new.csv', 'w', newline='') as csvfile:
+with open('/home/k03nza/dynamic-pricing/models/data/keyratedata_new.csv', 'w', newline='') as csvfile:
     writer = csv.DictWriter(csvfile, fieldnames=data.keys())
     writer.writeheader()
     print(len(data['timestamp']))

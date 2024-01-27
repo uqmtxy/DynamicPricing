@@ -4,9 +4,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error, mean_squared_error, mean_absolute_percentage_error
 import helpers.demand_class as demand
 
-demand_model = demand.DemandModel("/home/maryna/dynamic-pricing/demand.model")
+demand_model = demand.DemandModel("/home/k03nza/dynamic-pricing/demand.model")
 
-data = pd.read_csv('/home/maryna/dynamic-pricing/models/data/cian_new_flats.csv', delimiter=";")
+data = pd.read_csv('/home/k03nza/dynamic-pricing/models/data/cian_new_flats.csv', delimiter=";")
 data.drop(data[data["totalArea"] > 5000].index, inplace=True)
 data.drop(data[np.isnan(data["viewCountTotal"])].index, inplace=True)
 
